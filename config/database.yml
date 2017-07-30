@@ -1,11 +1,12 @@
 production:
-  adapter: mysql2
-  database: todo
-  host: localhost
-  username: root
-  password: root
-  port: 3306
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
+  database: da62jbog7b28td
+  pool: 5
+  username: lqawnutjzoiuhl
+  password: 96a16171caa31d1d5498374a40545a3eeb2eea9af5185bbc9845ae4cef5a3589@ec2-54-204-32-145.compute-1.amazonaws.com
+  port: 5432
+
 
 development:
   adapter: mysql2
