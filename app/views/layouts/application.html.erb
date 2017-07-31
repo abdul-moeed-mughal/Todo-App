@@ -7,14 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
 <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-
+<body>
 <p class="navbar-text pull-right">
   <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
@@ -26,7 +25,43 @@
   <% end %>
 </p>
 
-  <%= yield %>
+
+
+<ul>
+  <li><a href="#home">Administration</a></li>
+  <li><a href="#news">Tasks</a></li>
+  <li><a href="#contact">New Task</a></li>
+</ul>
 
 </body>
+
+  <%= yield %>
+
+
 </html>
+
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111;
+    }
+</style>
