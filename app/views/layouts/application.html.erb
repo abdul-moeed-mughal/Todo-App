@@ -2,40 +2,54 @@
 <html>
 <head>
   <title>Todo</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
-<% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-<% end %>
 <body>
-<p class="navbar-text pull-right">
-  <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-  <% end %>
-</p>
 
+<div class="container-fluid" >
+  <div style="float: right;">
+    <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% end %>
+  </div>
 
+  <div>
+    <img alt="Todo image"  src="./../assets/download.png" style="width:10%">
+  </div></br>
+</div></br>
 
-<ul>
-  <li><a href="#home">Administration</a></li>
-  <li><a href="#news">Tasks</a></li>
-  <li><a href="#contact">New Task</a></li>
-</ul>
+    <ul>
+      <% begin %>
+          <% if current_user.admin %>
+              <li><%= link_to "Administration",admin_path %></li>
+              <%#= render partial: "admin/admin_menu" %>
+          <% end %>
+      <% rescue %>
+      <% end %>
+      <% if user_signed_in? %>
+          <li><%= link_to "Tasks", root_path %></li>
+          <li><%= link_to "New Task" %></li>
+      <% else %>
+         <li><%= link_to "Sign up", new_user_registration_path %></li>
+         <li><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
+      <li><%= link_to 'Home',root_path %></li>
+    </ul><br>
 
+    <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+<%= yield %>
 </body>
-
-  <%= yield %>
 
 
 </html>
@@ -64,4 +78,33 @@
     li a:hover {
         background-color: #111;
     }
+    .alert-success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
+    }
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    p {
+        margin: 0 0 10px;
+    }
+    .pull-right{
+        float: right !important;
+    }
+
+    .navbar-text {
+        float: left;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .navbar-text {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
 </style>
