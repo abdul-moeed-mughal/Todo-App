@@ -16,7 +16,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -25,12 +24,24 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'sprockets'
 
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise', '3.4.1'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'mysql2', '~> 0.3.10'
+gem 'sass-rails', '>= 3.2'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+gem 'bootstrap-datepicker-rails'
+# gem 'bootstrap-sass', '~> 3.3.6'
 
+# gem 'bootstrap-timepicker-rails'
+# gem 'jquery-timepicker-rails'
+
+# gem 'bootstrap-timepicker-rails', '~> 0.1.3'
+# gem 'mysql2','~> 0.3.11'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
