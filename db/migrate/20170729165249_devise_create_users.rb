@@ -32,7 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :name
       t.string :email
-      t.string :phone
+      t.string :mobile_number
       t.text :address
       t.datetime :dob
 

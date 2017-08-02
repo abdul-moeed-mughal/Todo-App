@@ -6,6 +6,29 @@
             <%= devise_error_messages! %>
         </div>
     <% end %>
+
+  <div class="field">
+      <%= f.label :profile_image %><br/>
+     <div>
+        <% if current_user.avatar.present? %>
+            <%= image_tag current_user.avatar,:style=> "height: 42px;width: 42px;border-radius:50%;" %>
+        <% else %>
+            <%= image_tag "profile.png",:style=> "height: 42px;width: 42px;border-radius:50%;" %>
+        <% end %>
+     </div>
+     <%= f.file_field :avatar %>
+  </div><br>
+
+  <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true%>
+  </div><br>
+
+  <div class="field">
+      <%= f.label :mobile_number %><br/>
+      <%= f.text_field :mobile_number, autofocus: true%>
+   </div><br>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -30,10 +53,7 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div><br>
 
-  <div class="field">
-    <%= f.label :profile_image %><br/>
-    <%= f.file_field :avatar %>
-  </div><br>
+
 
   <div class="actions">
     <%= f.submit "Update" %>

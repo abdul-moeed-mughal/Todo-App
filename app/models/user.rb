@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me,:avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me,:avatar,:name,:mobile_number
   mount_uploader :avatar, ImageUploader
   # attr_accessible :title, :body
+
+
+  validates :mobile_number,:presence => true,:numericality => true,:length => { :minimum => 10, :maximum => 15 }
 end

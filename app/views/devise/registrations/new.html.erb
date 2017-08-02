@@ -8,12 +8,12 @@
 
         <div class="field">
           <%= f.email_field :email,placeholder:"Email" ,autofocus: true %>
-        </div>
+        </div><br/>
 
         <div class="field">
           <% if @minimum_password_length %>
 
-          <% end %><br />
+          <% end %>
           <%= f.password_field :password,placeholder:"Password", autocomplete: "off" %>
         </div></br>
 
