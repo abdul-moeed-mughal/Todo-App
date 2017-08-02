@@ -23,22 +23,22 @@
   </div></br>
 </div></br>
 
-    <ul>
+    <ul id="menu">
       <% begin %>
           <% if current_user.admin %>
-              <li><%= link_to "Administration",admin_path %></li>
+              <li id="menu_li"><%= link_to "Administration",admin_path %></li>
               <%#= render partial: "admin/admin_menu" %>
           <% end %>
       <% rescue %>
       <% end %>
       <% if user_signed_in? %>
-          <li><%= link_to "Tasks", root_path %></li>
-          <li><%= link_to "New Task" %></li>
+          <li id="menu_li"><%= link_to "Tasks", root_path %></li>
+          <li id="menu_li"><%= link_to "New Task" %></li>
       <% else %>
-         <li><%= link_to "Sign up", new_user_registration_path %></li>
-         <li><%= link_to "Login", new_user_session_path %></li>
+         <li id="menu_li"><%= link_to "Sign up", new_user_registration_path %></li>
+         <li id="menu_li"><%= link_to "Login", new_user_session_path %></li>
       <% end %>
-      <li><%= link_to 'Home',root_path %></li>
+      <li id="menu_li"><%= link_to 'Home',root_path %></li>
     </ul><br>
 
     <% if notice %>
@@ -55,7 +55,7 @@
 </html>
 
 <style>
-    ul {
+    #menu {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -63,7 +63,7 @@
         background-color: #333;
     }
 
-    li {
+    #menu_li {
         float: right;
     }
 
@@ -82,6 +82,11 @@
         background-color: #dff0d8;
         border-color: #d6e9c6;
         color: #3c763d;
+    }
+    .alert-danger {
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        color: #a94442;
     }
     .alert {
         padding: 15px;
@@ -107,4 +112,5 @@
         margin-bottom: 15px;
     }
 
+    
 </style>
