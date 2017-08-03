@@ -28,13 +28,13 @@
   </div>
 
   <div>
-    <img alt="Todo image"  src="./../assets/download.png" style="width:10%">
+    <%= image_tag "download.png", :style=>"width:10%"%>
   </div></br>
 </div></br>
-
     <ul id="menu">
+
       <% begin %>
-          <% if current_user.admin %>
+          <% if current_user.admin%>
               <li id="menu_li"><%= link_to "Administration",admin_path %></li>
               <%#= render partial: "admin/admin_menu" %>
           <% end %>
@@ -47,7 +47,9 @@
          <li id="menu_li"><%= link_to "Sign up", new_user_registration_path %></li>
          <li id="menu_li"><%= link_to "Login", new_user_session_path %></li>
       <% end %>
+
       <li id="menu_li"><%= link_to 'Home',root_path %></li>
+
     </ul><br>
 
     <% if notice %>
@@ -76,7 +78,7 @@
         float: right;
     }
 
-    li a {
+    #menu_li a {
         display: inline-block;
         color: white;
         text-align: center;
@@ -84,7 +86,7 @@
         text-decoration: none;
     }
 
-    li a:hover {
+    #menu_li a:hover {
         background-color: #111;
     }
 
