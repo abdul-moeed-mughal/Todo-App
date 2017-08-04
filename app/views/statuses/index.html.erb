@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <h2>Statuses</h2>
+  <div style="float:right;">
+    <%= link_to 'New Status',new_status_path %>
+  </div><br/>
+
+  <table class="table table-bordered table-responsive">
+
+    <thead>
+    <th>#</th>
+    <th>Name</th>
+    <th>Is Closed</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </thead>
+    <tbody>
+    <% @statuses.each do |status| %>
+        <tr>
+          <td><%= status.id%></td>
+          <td><%= status.name%></td>
+          <td><%= status.is_closed%>
+          <td><%= link_to 'Edit', edit_status_path(status.id)%></td>
+          <td><%= link_to 'Delete', "statuses/#{status.id}",method: "DELETE"%></td>
+        </tr>
+    <%end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back',admin_path %>
+</div>

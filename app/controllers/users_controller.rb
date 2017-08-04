@@ -58,4 +58,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def destroy
+    @user = User.find(params[:id]).destroy
+    redirect_to users_path
+  end
+end
+
+private
+
+def find_user
+  @user = Status.find(params[:id])
 end

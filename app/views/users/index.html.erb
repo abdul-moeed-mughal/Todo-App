@@ -27,9 +27,10 @@
           <td><%= user.mobile_number%></td>
           <td><%= user.admin%>
           <td><%= link_to 'Edit', edit_user_path(user.id)%></td>
-          <td><%= link_to 'Delete', edit_user_path(user.id)%></td>
+          <td><%= link_to 'Delete', "users/#{user.id}",method: "DELETE"%></td>
         </tr>
       <%end %>
     </tbody>
   </table>
+  <%= link_to 'Back',admin_path %>
 </div>

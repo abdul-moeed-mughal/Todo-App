@@ -20,6 +20,3 @@
 
 
 
-$(function() {
-    $('.datepicker').datepicker();
-});
