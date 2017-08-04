@@ -1,1 +1,21 @@
-<h2> User Show</h2>
+
+
+<div class="container-fluid">
+
+  <%= label_tag "Profile Image" %>
+  <div>
+    <% if @user.avatar.present? %>
+        <%= image_tag @user.avatar,:style=> "height: 42px;width: 42px;border-radius:50%;" %>
+    <% else %>
+        <%= image_tag "profile.png",:style=> "height: 42px;width: 42px;border-radius:50%;" %>
+    <% end %>
+  </div><br/>
+
+  <p><b>Name:</b><%= @user.name%></p>
+  <p><b>Email:</b><%= @user.email%></p>
+  <p><b>Mobile Number:</b><%= @user.mobile_number%></p>
+  <p><b>DOB:</b><%= @user.dob%></p>
+  <p><b>Is Admin:</b><%= @user.admin%></p>
+</div>
+
+<%= link_to 'Back to Home', users_path %>

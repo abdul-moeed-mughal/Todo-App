@@ -1,10 +1,14 @@
 <div class="container-fluid">
   <h2>Users</h2>
+   <div style="float:right;">
+     <%= link_to 'New User',new_user_path %>
+   </div><br/>
 
   <table class="table table-bordered table-responsive">
 
     <thead>
         <th>#</th>
+        <th>Avatar</th>
         <th>Name</th>
         <th>Email</th>
         <th>Mobile</th>
@@ -14,8 +18,10 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
+        <% avatar = user.avatar.present? ? user.avatar : 'profile.png' %>
         <tr>
           <td><%= user.id%></td>
+          <td><%=image_tag avatar,:style => "height:42px;width:42px;" %></td>
           <td><%= user.name%></td>
           <td><%= user.email%></td>
           <td><%= user.mobile_number%></td>

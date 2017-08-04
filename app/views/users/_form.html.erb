@@ -1,0 +1,46 @@
+<div class="field">
+  <%= f.label :profile_image %><br/>
+  <div>
+    <% if @user.avatar.present? %>
+        <%= image_tag @user.avatar,:style=> "height: 42px;width: 42px;border-radius:50%;" %>
+    <% else %>
+        <%= image_tag "profile.png",:style=> "height: 42px;width: 42px;border-radius:50%;" %>
+    <% end %>
+  </div><br/>
+  <%= f.file_field :avatar,value:@user.avatar %>
+</div><br>
+
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true%>
+</div><br>
+
+<div class="field">
+  <%= f.label :mobile_number %><br/>
+  <%= f.text_field :mobile_number, autofocus: true%>
+</div><br>
+
+<div class="field">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %>
+</div><br>
+
+<div class="field">
+  <%= f.label :dob %><br/>
+  <%= f.text_field :dob, class: "datepicker"%>
+</div><br>
+
+<div class="field">
+  <%= f.label :password %><br/>
+  <%= f.password_field :password, autocomplete: "off" %>
+</div><br>
+
+<div class="field">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+</div><br>
+
+<div class="field">
+  <%= f.label :is_admin %>
+  <%= f.check_box :admin, {}, true, false %>
+</div>
