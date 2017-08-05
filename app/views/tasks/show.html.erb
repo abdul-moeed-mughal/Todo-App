@@ -1,0 +1,42 @@
+<div class="container-fluid ">
+  <h2>#<%= "#{@task.id}  #{@task.subject}" %></h2>
+
+  <div class="well">
+    <%= link_to 'Edit',edit_task_path(@task.id),style: 'float:right;'%>
+    <div class="field">
+        <% avatar = @task.author.avatar rescue 'profile.png' %>
+        <%= image_tag avatar,style: 'height:42px;width:42px;', classs: 'col-sm-1'%>
+        Added By <%= @task.author.name rescue ''%> <%= link_to time_ago_in_words(@task.created_at),'#',:title => @task.created_at%> ago.
+    </div><br/>
+
+    <p clsss="field">
+      <b class="col-sm-1">Status:</b>
+      <%= @task.status.name%>
+    </p>
+
+    <p clsss="field">
+      <b class="col-sm-1">Description:</b>
+      <%= @task.description%>
+    </p>
+
+    <p clsss="field">
+      <b class="col-sm-1">Assignee:</b>
+      <%= @task.assigned_to.name%>
+    </p>
+
+    <p clsss="field">
+      <b class="col-sm-1">Start Date:</b>
+      <%= @task.start_date%>
+    </p>
+
+    <p clsss="field">
+      <b class="col-sm-1">End Date:</b>
+      <%= @task.end_date%>
+    </p><br/>
+
+    <p class="field"><br/>
+        <%= link_to 'Back', tasks_path,class: 'col-sm-1' %>
+    </p>
+  </div>
+
+</div>

@@ -13,8 +13,43 @@ class TasksController < ApplicationController
   def edit
   end
 
-  def update
+  def create
+    @task = Task.new
+    @task.status_id = params['task']['status']
+    @task.subject = params['task']['subject']
+    @task.description = params['task']['description']
+    @task.assigned_to_id = params['task']['assigned_to_id']
+    @task.author_id = current_user.id
+    @task.start_date = params['task']['start_date']
+    @task.end_date = params['task']['end_date']
+    respond_to do |format|
+      if @task.save
+        format.html {redirect_to task_path(@task.id),notice: "Task was successfully created."}
+        format.json {render :show,status: :ok,location: @task}
+      else
+        format.html{render :edit}
+        format.json{render json: @user.errors}
+      end
+    end
+  end
 
+  def update
+    @task.status_id = params['task']['status']
+    @task.subject = params['task']['subject']
+    @task.description = params['task']['description']
+    @task.assigned_to_id = params['task']['assigned_to_id']
+   p @task.start_date = params['task']['start_date']
+    p @task.end_date = params['task']['end_date']
+    respond_to do |format|
+      if @task.save
+        p @task
+        format.html {redirect_to task_path(@task.id),notice: "Task was successfully created."}
+        format.json {render :show,status: :ok,location: @task}
+      else
+        format.html{render :edit}
+        format.json{render json: @user.errors}
+      end
+    end
   end
 
   def show

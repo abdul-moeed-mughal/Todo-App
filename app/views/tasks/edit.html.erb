@@ -1,0 +1,36 @@
+<h2>Edit #<%= @task.id %></h2>
+<div class="container-fluid well">
+
+    <% if @task.errors.any? %>
+        <div class="alert alert-danger">
+          <% @task.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </div>
+    <% end %>
+
+    <%= form_for(@task, url:"/tasks/#{@task.id}", html: {method: :put},multipart: true) do |f| %>
+        <%= render :partial =>'form',:locals => {:user => @task,:f => f} %>
+
+        <div class="actions">
+          <%= f.submit "Update" ,class: "btn btn-primary"%>
+        </div><br/>
+
+        <%= link_to "Back",tasks_path %>
+    <% end %>
+
+
+
+
+
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+    });
+
+</script>
