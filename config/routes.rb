@@ -6,8 +6,10 @@ Todo::Application.routes.draw do
   get '/admin', to: "admin#index"
   resources :users
   resources :statuses
+  resources :tasks
   match '/create_status', :to => 'statuses#create', :via => :post
   match '/create_users', :to => 'users#create', :via => :post
+  match '/create_tasks', :to => 'tasks#create', :via => :post
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

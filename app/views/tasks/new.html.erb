@@ -1,0 +1,11 @@
+<h2>New Task</h2>
+<div class="container-fluid well">
+
+  <%= form_for(@task, url: create_tasks_path, html: {method: :post},multipart: true) do |f| %>
+       <%= render :partial => 'form', :locals => {:task => @task, :f => f} %>
+
+      <div class="actions">
+        <%= f.submit "Create" ,class: "btn btn-primary"%>
+      </div><br/>
+  <% end %>
+</div>

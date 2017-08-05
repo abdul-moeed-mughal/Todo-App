@@ -1,0 +1,15 @@
+<p class="field">
+  <%= f.label :status %>
+  <%= f.select(:status,Status.all.map{|s| [s.name,s.id]},:prompt => '--Select status--' )%>
+</p><br/>
+
+
+<p class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject,style: "width:50%" %>
+</p><br/>
+
+<p class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description,style: "width:50%;height:100px;" %>
+</p><br/>

@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
+  before_filter :find_user, only: [:show,:edit,:update,:destroy]
+
   def index
     @users = User.all
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def new
@@ -56,7 +57,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def destroy
@@ -68,5 +68,5 @@ end
 private
 
 def find_user
-  @user = Status.find(params[:id])
+  @user = User.find(params[:id])
 end

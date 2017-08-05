@@ -45,8 +45,8 @@
       <% rescue %>
       <% end %>
       <% if user_signed_in? %>
-          <li id="menu_li"><%= link_to "Tasks", root_path %></li>
-          <li id="menu_li"><%= link_to "New Task" %></li>
+          <li id="menu_li"><%= link_to "Tasks", tasks_path %></li>
+          <li id="menu_li"><%= link_to "New Task" ,new_task_path%></li>
       <% else %>
          <li id="menu_li"><%= link_to "Sign up", new_user_registration_path %></li>
          <li id="menu_li"><%= link_to "Login", new_user_session_path %></li>

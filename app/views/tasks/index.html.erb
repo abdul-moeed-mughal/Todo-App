@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h2>Tasks</h2>
+  <div style="float:right;">
+    <%= link_to 'New Task',new_task_path %>
+  </div><br/>
+
+  <table class="table table-bordered table-responsive">
+
+    <thead>
+    <th>#</th>
+    <th>Status</th>
+    <th>Subject</th>
+    <th>Description</th>
+    <th>Assignee</th>
+    <th>Author</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </thead>
+    <tbody>
+    <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.id%></td>
+          <td><%= task.status.name%></td>
+          <td><%= task.subject%></td>
+          <td><%= task.description%></td>
+          <td><%= task.assigned_to.name rescue ''%></td>
+          <td><%= task.author.name rescue ''%>
+          <td><%= task.start_date%></td>
+          <td><%= task.end_date%></td>
+          <td><%= link_to 'Edit', edit_task_path(task.id)%></td>
+          <td><%= link_to 'Delete', "tasks/#{task.id}",method: "DELETE"%></td>
+        </tr>
+    <%end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back',admin_path %>
+</div>
