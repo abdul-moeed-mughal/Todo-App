@@ -38,8 +38,8 @@ class TasksController < ApplicationController
     @task.subject = params['task']['subject']
     @task.description = params['task']['description']
     @task.assigned_to_id = params['task']['assigned_to_id']
-   p @task.start_date = params['task']['start_date']
-    p @task.end_date = params['task']['end_date']
+    @task.start_date = params['task']['start_date']
+    @task.end_date = params['task']['end_date']
     respond_to do |format|
       if @task.save
         p @task

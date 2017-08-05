@@ -1,6 +1,6 @@
-<h2>Edit #<%= @task.id %></h2>
-<div class="container-fluid well">
-
+<div class="container-fluid">
+  <h2> #<%= @task.id %></h2>
+  <div class="well">
     <% if @task.errors.any? %>
         <div class="alert alert-danger">
           <% @task.errors.full_messages.each do |message| %>
@@ -18,11 +18,7 @@
 
         <%= link_to "Back",tasks_path %>
     <% end %>
-
-
-
-
-
+  </div>
 </div>
 
 <script>

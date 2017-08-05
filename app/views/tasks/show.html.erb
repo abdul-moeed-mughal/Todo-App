@@ -9,30 +9,30 @@
         Added By <%= @task.author.name rescue ''%> <%= link_to time_ago_in_words(@task.created_at),'#',:title => @task.created_at%> ago.
     </div><br/>
 
-    <p clsss="field">
-      <b class="col-sm-1">Status:</b>
-      <%= @task.status.name%>
-    </p>
+    <dl class="dl-horizontal">
+      <dt>Status:</dt>
+      <dd><%= @task.status.name%></dd>
+    </dl>
 
-    <p clsss="field">
-      <b class="col-sm-1">Description:</b>
-      <%= @task.description%>
-    </p>
+    <dl class="dl-horizontal">
+      <dt>Description:</dt>
+      <dd><%= @task.description%></dd>
+    </dl>
 
-    <p clsss="field">
-      <b class="col-sm-1">Assignee:</b>
-      <%= @task.assigned_to.name%>
-    </p>
+    <dl class="dl-horizontal">
+      <dt>Assignee:</dt>
+      <dd><%= @task.assigned_to.name rescue '' %></dd>
+    </dl>
 
-    <p clsss="field">
-      <b class="col-sm-1">Start Date:</b>
-      <%= @task.start_date%>
-    </p>
+    <dl class="dl-horizontal">
+      <dt>Start Date:</dt>
+      <dd><%= @task.start_date%></dd>
+    </dl>
 
-    <p clsss="field">
-      <b class="col-sm-1">End Date:</b>
-      <%= @task.end_date%>
-    </p><br/>
+    <dl class="dl-horizontal">
+      <dt>End Date:</dt>
+      <dd><%= @task.end_date%></dd>
+    </dl>
 
     <p class="field"><br/>
         <%= link_to 'Back', tasks_path,class: 'col-sm-1' %>
