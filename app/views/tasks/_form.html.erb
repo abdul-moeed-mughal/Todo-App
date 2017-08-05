@@ -1,15 +1,31 @@
 <p class="field">
-  <%= f.label :status %>
-  <%= f.select(:status,Status.all.map{|s| [s.name,s.id]},:prompt => '--Select status--' )%>
+  <%#= f.label :status,class: 'col-sm-1' %>
+  <%#= f.select(:status,Status.all.map{|s| [s.name,s.id]},:prompt => '--Select status--' )%>
 </p><br/>
 
 
 <p class="field">
-    <%= f.label :subject %>
+    <%= f.label :subject,class: 'col-sm-1' %>
     <%= f.text_field :subject,style: "width:50%" %>
 </p><br/>
 
 <p class="field">
-  <%= f.label :description %>
+  <%= f.label :description,class: 'col-sm-1' %>
   <%= f.text_area :description,style: "width:50%;height:100px;" %>
+</p><br/>
+
+<p class="field">
+  <%= f.label :assignee,class: 'col-sm-1' %>
+  <%= f.select(:assigned_to_id,User.all.map{|s| [s.name,s.id]},:prompt => '--Select assignee--' )%>
+</p><br/>
+
+<p class="field">
+  <%= f.label :start_date,class: 'col-sm-1' %>
+  <%= f.text_field :start_date,class: 'datepicker' %>
+</p><br/>
+
+
+<p class="field">
+  <%= f.label :end_date,class: 'col-sm-1' %>
+  <%= f.text_field :end_date,class: 'datepicker' %>
 </p><br/>
