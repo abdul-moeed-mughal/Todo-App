@@ -1,0 +1,46 @@
+/home/sabari/.rvm/rubies/ruby-2.0.0-p648/bin/ruby -r ./siteconf20170806-29151-1wf5k58.rb extconf.rb
+checking for ffi_call() in -lffi... yes
+checking for ffi_prep_closure()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for shlwapi.h... no
+checking for rb_thread_blocking_region()... yes
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... yes
+creating extconf.h
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling Function.c
+compiling Thread.c
+compiling Type.c
+compiling MemoryPointer.c
+compiling AbstractMemory.c
+compiling Call.c
+compiling ffi.c
+compiling LastError.c
+compiling ArrayType.c
+compiling LongDouble.c
+compiling StructByReference.c
+compiling Types.c
+compiling ClosurePool.c
+compiling Variadic.c
+compiling Buffer.c
+compiling DataConverter.c
+compiling Struct.c
+compiling Platform.c
+compiling MappedType.c
+compiling DynamicLibrary.c
+compiling MethodHandle.c
+compiling Pointer.c
+compiling StructByValue.c
+compiling FunctionInfo.c
+compiling StructLayout.c
+linking shared-object ffi_c.so
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 ffi_c.so ./.gem.20170806-29151-1tv7v0a
+installing default ffi_c libraries

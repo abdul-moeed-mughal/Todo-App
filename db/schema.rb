@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170804144430) do
+ActiveRecord::Schema.define(:version => 20170805122102) do
 
   create_table "statuses", :force => true do |t|
     t.string   "name"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20170804144430) do
   create_table "tasks", :force => true do |t|
     t.string   "subject"
     t.text     "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string   "start_date"
+    t.string   "end_date"
     t.integer  "status_id"
     t.integer  "assigned_to_id"
     t.integer  "author_id"
@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(:version => 20170804144430) do
     t.string   "name"
     t.string   "mobile_number"
     t.text     "address"
-    t.datetime "dob"
+    t.string   "dob"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "avatar"
     t.boolean  "admin"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
