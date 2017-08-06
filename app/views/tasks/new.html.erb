@@ -1,6 +1,13 @@
 <h2>New Task</h2>
 <div class="container-fluid well">
 
+  <% if @task.errors.any? %>
+      <div class="alert alert-danger">
+        <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </div>
+  <% end %>
   <%= form_for(@task, url: create_tasks_path, html: {method: :post},multipart: true,class: 'form-horizontal') do |f| %>
        <%= render :partial => 'form', :locals => {:task => @task, :f => f} %>
 

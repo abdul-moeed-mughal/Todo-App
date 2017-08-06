@@ -27,7 +27,7 @@ class TasksController < ApplicationController
         format.html {redirect_to task_path(@task.id),notice: "Task was successfully created."}
         format.json {render :show,status: :ok,location: @task}
       else
-        format.html{render :edit}
+        format.html{render :new}
         format.json{render json: @user.errors}
       end
     end

@@ -1,16 +1,14 @@
-<div class="container-fluid well">
+<div class="container-fluid ">
     <h2>New User</h2>
+  <div class="well">
+      <%= form_for(@user, url: create_users_path, html: { method: :post },multipart: true) do |f| %>
+          <%= render :partial =>'form',:locals => {:user => @user,:f => f} %>
 
+          <div class="actions">
+            <%= f.submit "Create" ,class: "btn btn-primary"%>
+          </div><br/>
+      <% end %>
 
-
-  <%= form_for(@user, url: create_users_path, html: { method: :post },multipart: true) do |f| %>
-
-      <%= render :partial =>'form',:locals => {:user => @user,:f => f} %>
-
-      <div class="actions">
-        <%= f.submit "Create" ,class: "btn btn-primary"%>
-      </div><br/>
-  <% end %>
-
-  <%= link_to 'Back', users_path %>
+      <%= link_to 'Back', users_path %>
+  </div>
 </div>

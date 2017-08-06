@@ -4,9 +4,18 @@
   <title>Todo</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'jquery-ui' %>
+  <%= stylesheet_link_tag 'bootstrap.min' %>
+  <%= stylesheet_link_tag 'jquery.dataTables.min'%>
+  <%= stylesheet_link_tag 'dataTables.bootstrap.min'%>
+  <%= stylesheet_link_tag 'responsive.bootstrap.min'%>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'jquery-1.12.4' %>
   <%= javascript_include_tag 'jquery-ui'%>
+  <%= javascript_include_tag 'jquery.dataTables.min'%>
+  <%= javascript_include_tag 'dataTables.bootstrap.min'%>
+  <%= javascript_include_tag 'dataTables.responsive.min'%>
+  <%= javascript_include_tag 'responsive.bootstrap.min'%>
 
   <%= csrf_meta_tags %>
 </head>
@@ -113,3 +122,22 @@
     }
 
 </style>
+
+<script>
+    $(document).ready(function(){
+        $('#datatable').DataTable({
+            responsive: {
+                details: {
+                    type: 'column',
+                    target: 'tr'
+                }
+            },
+            columnDefs: [ {
+                className: 'control',
+                orderable: false,
+                targets:   0
+            } ],
+            order: [ 1, 'asc' ]
+        });
+    });
+</script>
