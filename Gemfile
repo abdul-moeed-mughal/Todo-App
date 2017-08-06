@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '3.2.21'
 
@@ -25,7 +26,6 @@ group :assets do
 end
 
 gem 'sprockets'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'devise', '3.4.1'
