@@ -10,7 +10,7 @@
     <% end %>
 
     <%= form_for(@task, url:"/tasks/#{@task.id}", html: {method: :put},multipart: true) do |f| %>
-        <%= render :partial =>'form',:locals => {:user => @task,:f => f} %>
+        <%= render :partial =>'form',:locals => {:task => @task,:f => f} %>
 
         <div class="actions">
           <%= f.submit "Update" ,class: "btn btn-primary"%>

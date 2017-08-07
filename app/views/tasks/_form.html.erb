@@ -1,6 +1,6 @@
 <p class="field">
   <%= f.label :status,class: 'col-sm-1' %>
-  <%= f.select(:status,Status.all.map{|s| [s.name,s.id]},:prompt => '--Select status--'  )%>
+  <%= f.select(:status,options_for_select(Status.all.map{|s| [s.name,s.id]},task.status_id),:prompt => '--Select status--'  )%>
 </p><br/>
 
 
@@ -16,7 +16,7 @@
 
 <p class="field">
   <%= f.label :assignee,class: 'col-sm-1' %>
-  <%= f.select(:assigned_to_id,User.all.map{|s| [s.name,s.id]},:prompt => '--Select assignee--' )%>
+  <%= f.select(:assigned_to_id,options_for_select(User.all.map{|s| [s.name,s.id]},task.assigned_to_id),:prompt => '--Select assignee--' )%>
 </p><br/>
 
 <p class="field">
