@@ -1,6 +1,8 @@
 <%= javascript_include_tag 'highcharts.js' %>
 <%= javascript_include_tag 'exporting.js' %>
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<% if user_signed_in? %>
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<% end %>
 <span id="details" data-users="<%=@users_name %>" data-new="<%=@new_count.inspect %>" data-inprogress="<%=@inprogress_count %>" data-completed="<%=@completed_count %>" data-admin_approval="<%=@admin_approval_count %>"></span>
 
 
