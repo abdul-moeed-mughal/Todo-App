@@ -121,6 +121,16 @@
         margin-bottom: 15px;
     }
 
+    #menu_li a:hover{
+        background-color:#1B3E70;
+        color:white;
+    }
+    #menu_li .active{
+        background-color:#1B3E70;
+        color:white;
+
+    }
+
 </style>
 
 <script>
@@ -139,5 +149,10 @@
             } ],
             order: [ 1, 'asc' ]
         });
+        $('#menu_li a').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        });
     });
+
+
 </script>

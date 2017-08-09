@@ -9,10 +9,12 @@ production:
 
 
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   database: todo
+  server: localhost
+  host: localhost
   pool: 5
-  username: postgres
+  username: root
   password: root
-  port: 5432
+  port: 3306

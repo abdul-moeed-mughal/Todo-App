@@ -1,12 +1,64 @@
+<%= javascript_include_tag 'highcharts.js' %>
+<%= javascript_include_tag 'exporting.js' %>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<span id="details" data-users="<%=@users_name %>" data-new="<%=@new_count.inspect %>" data-inprogress="<%=@inprogress_count %>" data-completed="<%=@completed_count %>" data-admin_approval="<%=@admin_approval_count %>"></span>
 
-<% content_for :top_content do %>
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome!</h1>
-        <p>Register to get started.</p>
-        <p>
-          <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
-        </p>
-      </div>
-    </div>
-<% end %>
+
+
+<script>
+  var users = $('#details').data('users');
+  var new_status = $('#details').data('new');
+  var inprogress_status = $('#details').data('inprogress');
+  var completed_status = $('#details').data('completed');
+  var admin_approval_status = $('#details').data('admin_approval')
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Users with task status'
+        },
+
+        xAxis: {
+            categories: users,
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Tasks'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'New',
+            data: new_status
+
+        }, {
+            name: 'In Progress',
+            data: inprogress_status
+
+        }, {
+            name: 'Completed',
+            data: completed_status
+
+        }, {
+            name: 'Admin Approval',
+            data: admin_approval_status
+
+        }]
+    });
+</script>
