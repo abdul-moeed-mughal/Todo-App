@@ -35,6 +35,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 gem 'bootstrap-datepicker-rails'
+gem 'test-unit'
 # gem 'bootstrap-sass', '~> 3.3.6'
 
 # gem 'bootstrap-timepicker-rails'
