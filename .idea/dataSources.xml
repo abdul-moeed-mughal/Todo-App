@@ -4,9 +4,9 @@
     <data-source source="LOCAL" name="Rails Todo: production" uuid="04e4b71b-5f3e-4fae-8406-31cc82f4169e">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/da62jbog7b28td</jdbc-url>
-      <user-name>lqawnutjzoiuhl</user-name>
-      <user-password>df93df9cdfcbdf9bdf9cdf9bdf9ddf9bdfc9dfcbdfcbdf99df9bdfcedf9bdfcedf9fdf9edf93df92df99df9ddf9edfcbdf9edf9adf9fdf9edf9fdfcbdf99dfcfdfcfdfc8df98dfcfdfcfdfcbdf93dfcbdfccdf9fdf9bdf92df9fdfc8dfc8dfc9df93df92df9edf9fdfcbdfcfdf9edfc9dfcfdfccdf9fdfcbdf99df9fdf92df93dfeadfcfdfc9df98df87df9fdf9edf87df98df9adf9edf87df99df98df87df9bdf9edf9fdf84dfc9dfc5dfc7dfdadfdfdfdedfcfdf87df9bdf84dfcbdfc7dfcbdfd0dfc5dfc4dfcbdfdddfd9df84dfc9dfc5dfc7</user-password>
+      <jdbc-url>jdbc:postgresql://ec2-23-21-85-76.compute-1.amazonaws.com:5432/d3fm53ehuhhe8g</jdbc-url>
+      <user-name>qtxhftdshqddes</user-name>
+      <user-password>df9edf99df9ddfc9dfcbdfcedf92dfc9df93df9adf99dfcedf9bdfc9dfcfdfc8df9ddfcfdf93df9bdf99df9adfcfdfcfdf9cdfcbdf99df99df9ddf9adf9cdf9cdfc9df99df9edfcbdfcedf99df9ddfcfdf98df98df9fdfcedfccdfccdf93dfcedf92df9ddf9adf92df99df92df9bdf9bdf92dfc8dfc9df9ddfccdf9edf9bdf9f</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Todo: development" uuid="32c8cbc2-8af8-4eaf-9572-9e5b1409fc08">
