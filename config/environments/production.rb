@@ -21,9 +21,9 @@ Todo::Application.configure do
   config.assets.digest = true
 
   config.assets.precompile += %w( highcharts.js )
-  config.assets.precompile += %w( jquery.dataTables.min.js jquery-ui-1.8.21.custom.min.js jquery-ui-1.8.21.custom.css bootstrap-datepicker.js fullcalendar.js)
-  config.assets.precompile += %w( jquery.dataTables.min.js jquery-ui.css bootstrap.min.css jquery.dataTables.min.css dataTables.bootstrap.min.css responsive.bootstrap.min.css jquery-1.12.4.js jquery-ui.js jquery.dataTables.min.js dataTables.bootstrap.min.js dataTables.responsive.min.js responsive.bootstrap.min.js)
-
+  # config.assets.precompile += %w( jquery.dataTables.min.js jquery-ui-1.8.21.custom.min.js jquery-ui-1.8.21.custom.css bootstrap-datepicker.js fullcalendar.js)
+  # config.assets.precompile += %w( jquery.dataTables.min.js jquery-ui.css bootstrap.min.css jquery.dataTables.min.css dataTables.bootstrap.min.css responsive.bootstrap.min.css jquery-1.12.4.js jquery-ui.js jquery.dataTables.min.js dataTables.bootstrap.min.js dataTables.responsive.min.js responsive.bootstrap.min.js)
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
