@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :find_user, only: [:show,:edit,:update,:destroy]
+  before_filter :require_admin_login
 
   def index
     @users = User.all
@@ -70,3 +71,4 @@ private
 def find_user
   @user = User.find(params[:id])
 end
+

@@ -13,7 +13,9 @@ class Task < ActiveRecord::Base
   def assigned_to_admin
     if self.status.name.casecmp('completed') == 0
       status = Status.find_by_name('Admin approval').id rescue''
+      assignee = User.find_by_name('admin').id rescue ''
       self.status_id = status
+      self.assigned_to_id = assignee
       self.save
     end
   end

@@ -1,5 +1,7 @@
 class StatusesController < ApplicationController
   before_filter :find_status, only: [:show,:edit,:update,:destroy]
+  before_filter :require_admin_login
+
   def index
     @statuses = Status.all
   end
