@@ -6,14 +6,19 @@
 #  username: lqawnutjzoiuhl
 #  password: 96a16171caa31d1d5498374a40545a3eeb2eea9af5185bbc9845ae4cef5a3589@ec2-54-204-32-145.compute-1.amazonaws.com
 #  port: 5432
+#production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: d3fm53ehuhhe8g
+#  host: ec2-23-21-85-76.compute-1.amazonaws.com
+#  username: qtxhftdshqddes
+#  password: 437cad8c903d1ceb7e9130ee6a337066c34ad37e225dff9d870838118bc7f415
+#  port: 5432
+
 production:
+  <<: *default
   adapter: postgresql
-  encoding: unicode
-  database: d3fm53ehuhhe8g
-  host: ec2-23-21-85-76.compute-1.amazonaws.com
-  username: qtxhftdshqddes
-  password: 437cad8c903d1ceb7e9130ee6a337066c34ad37e225dff9d870838118bc7f415
-  port: 5432
+  database: db/production.sqlite3
 
 development:
   adapter: mysql2
