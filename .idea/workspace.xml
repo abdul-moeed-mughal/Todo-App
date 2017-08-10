@@ -12,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Todo-App@Development__Todo.coverage" NAME="Development: Todo Coverage Results" MODIFIED="1502362833565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Todo" />
+    <SUITE FILE_PATH="coverage/Todo-App@Development__Todo.coverage" NAME="Development: Todo Coverage Results" MODIFIED="1502363129281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Todo" />
     <SUITE FILE_PATH="coverage/Todo@Development__Todo.coverage" NAME="Development: Todo Coverage Results" MODIFIED="1501347706216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Todo" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -30,19 +30,9 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.375" vertical-offset="540" max-vertical-offset="2445">
+            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="2445">
               <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-              <folding>
-                <marker date="1502350948645" expanded="true" signature="902:1606" placeholder="if ... end" />
-                <marker date="1502350948645" expanded="true" signature="988:1370" placeholder="do ... end" />
-                <marker date="1502350948645" expanded="true" signature="1011:1350" placeholder="if ... end" />
-                <marker date="1502350948645" expanded="true" signature="1439:1577" placeholder="do ... end" />
-                <marker date="1502350948645" expanded="true" signature="1739:1972" placeholder="begin ... end" />
-                <marker date="1502350948645" expanded="true" signature="1761:1937" placeholder="if ... end" />
-                <marker date="1502350948645" expanded="true" signature="1985:2336" placeholder="if ... end" />
-                <marker date="1502350948645" expanded="true" signature="2424:2504" placeholder="if ... end" />
-                <marker date="1502350948645" expanded="true" signature="2515:2592" placeholder="if ... end" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.75949365" vertical-offset="135" max-vertical-offset="1185">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -1106,26 +1096,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.375" vertical-offset="540" max-vertical-offset="2445">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="2445">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <marker date="1502350948645" expanded="true" signature="902:1606" placeholder="if ... end" />
-            <marker date="1502350948645" expanded="true" signature="988:1370" placeholder="do ... end" />
-            <marker date="1502350948645" expanded="true" signature="1011:1350" placeholder="if ... end" />
-            <marker date="1502350948645" expanded="true" signature="1439:1577" placeholder="do ... end" />
-            <marker date="1502350948645" expanded="true" signature="1739:1972" placeholder="begin ... end" />
-            <marker date="1502350948645" expanded="true" signature="1761:1937" placeholder="if ... end" />
-            <marker date="1502350948645" expanded="true" signature="1985:2336" placeholder="if ... end" />
-            <marker date="1502350948645" expanded="true" signature="2424:2504" placeholder="if ... end" />
-            <marker date="1502350948645" expanded="true" signature="2515:2592" placeholder="if ... end" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75949365" vertical-offset="135" max-vertical-offset="1185">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
           <folding />
         </state>
       </provider>
