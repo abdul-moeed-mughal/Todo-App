@@ -5,7 +5,11 @@
     <%= link_to 'Edit',edit_task_path(@task.id),style: 'float:right;'%>
     <div class="field">
         <% avatar = @task.author.avatar rescue 'profile.png' %>
-        <%= image_tag avatar,style: 'height:42px;width:42px;', classs: 'col-sm-1'%>
+        <% if avatar.present? %>
+            <%= image_tag avatar,style: 'height:42px;width:42px;', classs: 'col-sm-1'%>
+        <%else %>
+          <%= image_tag 'profile.png',style: 'height:42px;width:42px;', classs: 'col-sm-1'%>
+        <% end %>
         Added By <%= @task.author.name rescue ''%> <%= link_to time_ago_in_words(@task.created_at),'#',:title => @task.created_at%> ago.
     </div><br/>
 
