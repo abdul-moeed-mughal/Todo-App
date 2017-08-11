@@ -17,7 +17,8 @@
        <th>Start Date</th>
        <th>End Date</th>
        <th>Edit</th>
-       <% if current_user.admin%>
+       <% p current_user %>
+       <% if current_user.admin %>
           <th>Delete</th>
           <th style="text-align:center;"><%= check_box_tag 'edit_all',nil,nil,class: 'edit_all'%></th>
        <% end %>
@@ -63,15 +64,13 @@
   </div>
 
 <script>
-var total_values = 0
+    var total_values = 0
         $('#edit_all').click(function(){
         if ($(this).is(':checked')) {
             $('.bulk_edit').prop('checked', true);
-            $('#bulk_edit').prop('disabled',false);
         }
         else{
             $('.bulk_edit').prop('checked', false);
-            $('#bulk_edit').prop('disabled',true);
         }
     });
 
@@ -93,7 +92,9 @@ var total_values = 0
             url: '/bulk_update',
             type: 'post',
             data: {ids : total_values,assignee: assignee},
+            complete: function () {},
             success: function(data){
+                location.reload();
             }
         });
     });

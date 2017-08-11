@@ -13,8 +13,8 @@ sort_desc_disabled.png: sort_desc_disabled-f596c74c70f987587bf165afc530e2cc.png
 sort_desc_disabled/index.png: sort_desc_disabled-f596c74c70f987587bf165afc530e2cc.png
 todo.png: todo-763d013f4ba590432b221e5c3b46da0b.png
 todo/index.png: todo-763d013f4ba590432b221e5c3b46da0b.png
-application.js: application-96981a8ae1cf49ab823d549729198477.js
-application/index.js: application-96981a8ae1cf49ab823d549729198477.js
+application.js: application-0dc5cbcdc11cd673c0f936093797b59c.js
+application/index.js: application-0dc5cbcdc11cd673c0f936093797b59c.js
 highcharts.js: highcharts-57f3c8423799ef69657e6da80c8b690b.js
 highcharts/index.js: highcharts-57f3c8423799ef69657e6da80c8b690b.js
 application.css: application-b87464d3b2885a74eff7413505d40523.css
