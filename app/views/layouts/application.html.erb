@@ -44,12 +44,11 @@
     <%= image_tag "download.png", :style=>"width:10%"%>
   </div></br>
 </div></br>
-    <ul id="menu">
 
+    <ul id="menu">
       <% begin %>
           <% if current_user.admin%>
               <li id="menu_li"><%= link_to "Administration",admin_path %></li>
-              <%#= render partial: "admin/admin_menu" %>
           <% end %>
       <% rescue %>
       <% end %>
@@ -62,7 +61,6 @@
       <% end %>
 
       <li id="menu_li"><%= link_to 'Home',root_path %></li>
-
     </ul><br>
 
     <% if notice %>
@@ -147,7 +145,13 @@
                 orderable: false,
                 targets:   0
             } ],
-            order: [ 1, 'asc' ]
+            order: [ 1, 'asc' ],
+            aoColumnDefs: [
+                {
+                    bSortable: false,
+                    aTargets: [ -1 ]
+                }
+            ]
         });
         $('#menu_li a').click(function(){
             $(this).addClass('active').siblings().removeClass('active');

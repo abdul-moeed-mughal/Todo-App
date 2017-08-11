@@ -60,6 +60,21 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to tasks_path
   end
+
+  def bulk_update
+    if params['ids'].present? && params['assignee'].present?
+      p tasks = Task.find(params["ids"]),update_all(:assigned_to_id =>  params['assignee'].to_i) rescue ''
+      p params['assignee'].to_i
+    end
+    respond_to do |format|
+      if tasks
+        format.html {redirect_to tasks_path,notice: "successfully updated."}
+      else
+        format.html{render :index}
+        format.json{render json: tasks.errors}
+      end
+    end
+  end
 end
 
 private

@@ -2,6 +2,7 @@
   <h2>Tasks</h2>
   <div style="float:right;">
     <%= link_to 'New Task',new_task_path %>
+    <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm">Bulk Edit</button>
   </div><br/>
 
   <table id="datatable" class="table table-bordered table-responsive">
@@ -18,6 +19,7 @@
        <th>Edit</th>
        <% if current_user.admin%>
           <th>Delete</th>
+          <th style="text-align:center;"><%= check_box_tag 'edit_all',nil,nil,class: 'edit_all'%></th>
        <% end %>
     </thead>
     <tbody>
@@ -34,6 +36,7 @@
           <td><%= link_to 'Edit', edit_task_path(task.id)%></td>
           <% if current_user.admin%>
             <td><%= link_to 'Delete', "tasks/#{task.id}",method: "DELETE"%></td>
+            <td align="center"><%= check_box_tag 'edit',nil,nil,class: 'bulk_edit', data: { "task_id" => "#{task.id}"}%></td>
           <% end %>
         </tr>
     <%end %>
@@ -41,5 +44,57 @@
   </table>
 </div>
 
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Bulk edit</h4>
+    </div>
+    <div class="modal-body">
+      <label for="sel1">Assignee:</label>
+      <%= select_tag 'assignee',options_for_select(User.all.map{|u| [u.name,u.id]}),class: 'form-control'%>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" id='update_all' data-dismiss="modal">Update</button>
+    </div>
+  </div>
+    </div>
+  </div>
 
+<script>
+var total_values = 0
+        $('#edit_all').click(function(){
+        if ($(this).is(':checked')) {
+            $('.bulk_edit').prop('checked', true);
+            $('#bulk_edit').prop('disabled',false);
+        }
+        else{
+            $('.bulk_edit').prop('checked', false);
+            $('#bulk_edit').prop('disabled',true);
+        }
+    });
 
+    $('#bulk_edit').click(function() {
+        var values = [];
+
+        $(".bulk_edit:checked").each(function(){
+            console.log(this)
+            values.push($(this).attr("data-task-id"));
+        });
+
+        total_values = values;
+    });
+
+    $('#update_all').click(function(){
+       alert(total_values)
+        assignee = $('#assignee').val();
+        $.ajax({
+            url: '/bulk_update',
+            type: 'post',
+            data: {ids : total_values,assignee: assignee},
+            success: function(data){
+            }
+        });
+    });
+</script>
