@@ -2,7 +2,9 @@
   <h2>Tasks</h2>
   <div style="float:right;">
     <%= link_to 'New Task',new_task_path %>
-    <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm">Bulk Edit</button>
+    <% if current_user.admin %>
+        <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm">Bulk Edit</button>
+    <% end %>
   </div><br/>
 
   <table id="datatable" class="table table-bordered table-responsive">
@@ -64,7 +66,8 @@
   </div>
 
 <script>
-    var total_values = 0
+  $(document).ready(function(){
+        var total_values = 0
         $('#edit_all').click(function(){
         if ($(this).is(':checked')) {
             $('.bulk_edit').prop('checked', true);
@@ -76,17 +79,13 @@
 
     $('#bulk_edit').click(function() {
         var values = [];
-
         $(".bulk_edit:checked").each(function(){
-            console.log(this)
             values.push($(this).attr("data-task-id"));
         });
-
         total_values = values;
     });
 
     $('#update_all').click(function(){
-       alert(total_values)
         assignee = $('#assignee').val();
         $.ajax({
             url: '/bulk_update',
@@ -98,4 +97,6 @@
             }
         });
     });
+
+  });
 </script>
