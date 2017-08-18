@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   before_filter :find_task, only: [:show,:edit,:update,:destroy]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
+
+    # render :json => @tasks
   end
 
   def new

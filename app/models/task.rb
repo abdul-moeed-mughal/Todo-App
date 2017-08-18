@@ -19,4 +19,11 @@ class Task < ActiveRecord::Base
       self.save
     end
   end
+
+  def self.search(value)
+    p value
+    tasks = self.all
+    tasks = Task.where("subject like ?","%#{value}%") if value.present?
+   p tasks
+  end
 end

@@ -140,6 +140,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
+    will_paginate (3.1.6)
 
 PLATFORMS
   ruby
@@ -162,6 +163,7 @@ DEPENDENCIES
   sqlite3
   test-unit
   uglifier (>= 1.0.3)
+  will_paginate
 
 BUNDLED WITH
    1.15.3

@@ -1,5 +1,12 @@
 <div class="container-fluid">
   <h2>Tasks</h2>
+
+  <%= form_tag tasks_path, :method => 'get',:id => 'search_tasks' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :id => 'search_tasks',:name => nil %>
+      </p>
+  <% end %>
   <div style="float:right;">
     <%= link_to 'New Task',new_task_path %>
     <% if current_user.admin %>
@@ -7,44 +14,13 @@
     <% end %>
   </div><br/>
 
-  <table id="datatable" class="table table-bordered table-responsive">
+  <div id="tasks_table"><%= render :partial => 'tasks_list',:locals => {:tasks => @tasks} %></div>
 
-    <thead>
-       <th>#</th>
-       <th>Status</th>
-       <th>Subject</th>
-       <th>Description</th>
-       <th>Assignee</th>
-       <th>Author</th>
-       <th>Start Date</th>
-       <th>End Date</th>
-       <th>Edit</th>
-       <% p current_user %>
-       <% if current_user.admin %>
-          <th>Delete</th>
-          <th style="text-align:center;"><%= check_box_tag 'edit_all',nil,nil,class: 'edit_all'%></th>
-       <% end %>
-    </thead>
-    <tbody>
-    <% @tasks.each do |task| %>
-        <tr>
-          <td><%= link_to task.id, task_path(task.id)%></td>
-          <td><%= task.status.name rescue ''%></td>
-          <td><%= task.subject%></td>
-          <td><%= task.description%></td>
-          <td><%= task.assigned_to.name rescue ''%></td>
-          <td><%= task.author.name rescue ''%>
-          <td><%= task.start_date%></td>
-          <td><%= task.end_date%></td>
-          <td><%= link_to 'Edit', edit_task_path(task.id)%></td>
-          <% if current_user.admin%>
-            <td><%= link_to 'Delete', "tasks/#{task.id}",method: "DELETE"%></td>
-            <td align="center"><%= check_box_tag 'edit',nil,nil,class: 'bulk_edit', data: { "task_id" => "#{task.id}"}%></td>
-          <% end %>
-        </tr>
-    <%end %>
-    </tbody>
-  </table>
+
+
+</div>
+<div class="digg_pagination">
+<%#= will_paginate @tasks %>
 </div>
 
   <div class="modal fade" id="myModal" role="dialog">
@@ -98,5 +74,32 @@
         });
     });
 
+      $("#search").keyup(function(){
+          search = $(this).val();
+          $.ajax({
+             url: "/tasks/",
+             type: 'get',
+              data: {search : search},
+             complete: function(){},
+             success: function(data){
+                 console.log(data)
+//                 $('#tasks').html(data)
+//                 $("#search").val(search)
+             }
+
+          });
+          return false;
+      });
+
+      $('#search_tasks input').keyup(function(){
+          $.get($('#search_tasks').attr('action'),
+          $('#search_tasks').serialize(), null, 'script');
+          return false;
+      });
+
   });
 </script>
+
+<style>
+
+</style>

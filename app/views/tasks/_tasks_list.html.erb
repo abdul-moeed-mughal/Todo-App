@@ -1,0 +1,38 @@
+<table id="tasks" class="table table-bordered table-responsive">
+<thead>
+<th>#</th>
+<th>Status</th>
+<th>Subject</th>
+<th>Description</th>
+<th>Assignee</th>
+<th>Author</th>
+<th>Start Date</th>
+<th>End Date</th>
+<th>Edit</th>
+<% if current_user.admin %>
+    <th>Delete</th>
+    <th style="text-align:center;"><%= check_box_tag 'edit_all',nil,nil,class: 'edit_all'%></th>
+<% end %>
+</thead>
+<tbody>
+<% tasks.each do |task| %>
+    <tr>
+      <td><%= link_to task.id, task_path(task.id)%></td>
+      <td><%= task.status.name rescue ''%></td>
+      <td><%= task.subject%></td>
+      <td><%= task.description%></td>
+      <td><%= task.assigned_to.name rescue ''%></td>
+      <td><%= task.author.name rescue ''%>
+      <td><%= task.start_date%></td>
+      <td><%= task.end_date%></td>
+      <td><%= link_to 'Edit', edit_task_path(task.id)%></td>
+      <% if current_user.admin%>
+          <td><%= link_to 'Delete', "tasks/#{task.id}",method: "DELETE"%></td>
+          <td align="center"><%= check_box_tag 'edit',nil,nil,class: 'bulk_edit', data: { "task_id" => "#{task.id}"}%></td>
+      <% end %>
+    </tr>
+<%end %>
+</tbody>
+</table>
+
+<%#= will_paginate tasks %>
