@@ -16,7 +16,7 @@
 
   <div id="tasks_table"><%= render :partial => 'tasks_list',:locals => {:tasks => @tasks} %></div>
 
-
+  <%= will_paginate @tasks %>
 
 </div>
 <div class="digg_pagination">

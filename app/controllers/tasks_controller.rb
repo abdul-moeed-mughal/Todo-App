@@ -4,8 +4,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
-
-    # render :json => @tasks
   end
 
   def new

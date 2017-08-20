@@ -21,9 +21,10 @@ class Task < ActiveRecord::Base
   end
 
   def self.search(value)
-    p value
-    tasks = self.all
-    tasks = Task.where("subject like ?","%#{value}%") if value.present?
-   p tasks
+    if value.present?
+      where('subject LIKE ? or description like ? or id like ?', "%#{value}%","%#{value}%","%#{value}%")
+    else
+      scoped
+    end
   end
 end
