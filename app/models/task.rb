@@ -22,7 +22,7 @@ class Task < ActiveRecord::Base
 
   def self.search(value)
     if value.present?
-      where('subject LIKE ? or description like ? or id like ?', "%#{value}%","%#{value}%","%#{value}%")
+      where('subject::string LIKE ? or description::text like ? or id::text like ?', "%#{value}%","%#{value}%","%#{value}%")
     else
       scoped
     end
