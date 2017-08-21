@@ -9,12 +9,14 @@
                 <%#= submit_tag "Search", :id => 'search_tasks',:name => nil %>
               </p>
           <% end %>
+
+
       </div>
-      <div class="col-xs-2 input-group" style="float:right;">
-        <%= link_to 'New Task',new_task_path%>
-        <% if current_user.admin %>
-            <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm">Bulk Edit</button>
-        <% end %>
+    <% if current_user.admin %>
+        <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm" style="float:right;">Bulk Edit</button>
+    <% end %>
+      <div class="input-group" style="float:right;">
+
       </div>
   </div><br/>
 
