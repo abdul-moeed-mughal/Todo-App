@@ -17,8 +17,8 @@ application.js: application-0dc5cbcdc11cd673c0f936093797b59c.js
 application/index.js: application-0dc5cbcdc11cd673c0f936093797b59c.js
 highcharts.js: highcharts-57f3c8423799ef69657e6da80c8b690b.js
 highcharts/index.js: highcharts-57f3c8423799ef69657e6da80c8b690b.js
-application.css: application-b87464d3b2885a74eff7413505d40523.css
-application/index.css: application-b87464d3b2885a74eff7413505d40523.css
+application.css: application-4a19daa60a4ab338e36d0fea19e8c174.css
+application/index.css: application-4a19daa60a4ab338e36d0fea19e8c174.css
 bootstrap.min.css.map: bootstrap.min.css-270bb9ce01d63af5423581eb3f7446a5.map
 bootstrap/index.min.css.map: bootstrap.min.css-270bb9ce01d63af5423581eb3f7446a5.map
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-926401aaae6d10ca4b03c7381d22f0f9.png
