@@ -166,6 +166,10 @@
         $('#menu_li a').click(function(){
             $(this).addClass('active').siblings().removeClass('active');
         });
+
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
     });
 
 
