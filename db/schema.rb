@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20170805122102) do
     t.string   "dob"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.boolean  "admin"
     t.string   "avatar"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

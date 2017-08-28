@@ -58,3 +58,4 @@ gem 'will_paginate'
 
 # To use debugger
 # gem 'debugger'
+gem "rspec-rails", :group => [:development, :test]

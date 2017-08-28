@@ -27,3 +27,14 @@ development:
   username: root
   password: root
   port: 3306
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: todo
+  server: localhost
+  host: localhost
+  pool: 5
+  username: root
+  password: root
+  port: 3306
