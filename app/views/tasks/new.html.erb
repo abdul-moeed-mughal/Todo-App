@@ -1,5 +1,5 @@
 <h2>New Task</h2>
-<div class="container-fluid well">
+<div class="container-fluid">
 
   <% if @task.errors.any? %>
       <div class="alert alert-danger">
@@ -8,15 +8,18 @@
         <% end %>
       </div>
   <% end %>
-  <%= form_for(@task, url: create_tasks_path, html: {method: :post},multipart: true,class: 'form-horizontal') do |f| %>
-       <%= render :partial => 'form', :locals => {:task => @task, :f => f} %>
 
-      <div class="actions">
-        <%= f.submit "Create" ,class: "btn btn-primary"%>
-      </div><br/>
+  <div class="well">
+      <%= form_for(@task, url: create_tasks_path, html: {method: :post},multipart: true,class: 'form-horizontal') do |f| %>
+           <%= render :partial => 'form', :locals => {:task => @task, :f => f} %>
 
-      <%= link_to 'Back',root_path %>
-  <% end %>
+          <div class="actions">
+            <%= f.submit "Create" ,class: "btn btn-primary"%>
+          </div><br/>
+
+          <%= link_to 'Back',root_path %>
+      <% end %>
+  </div>
 </div>
 
 <script>

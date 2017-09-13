@@ -13,7 +13,7 @@
 
       </div>
     <% if current_user.admin %>
-        <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm" style="float:right;">Bulk Edit</button>
+        <button type="button" id="bulk_edit" data-toggle="modal" data-target="#myModal" class="btn btn-info btn-sm" style="float:right;" disabled>Bulk Edit</button>
     <% end %>
       <div class="input-group" style="float:right;">
 
@@ -47,9 +47,20 @@
         $('#edit_all').click(function(){
         if ($(this).is(':checked')) {
             $('.bulk_edit').prop('checked', true);
+            $('#bulk_edit').prop('disabled',false);
         }
         else{
             $('.bulk_edit').prop('checked', false);
+            $('#bulk_edit').prop('disabled',true);
+        }
+    });
+
+    $('.bulk_edit').click(function() {
+        if ($(this).is(':checked')) {
+            $('#bulk_edit').prop('disabled', false);
+        }
+        else {
+            $('#bulk_edit').prop('disabled', true);
         }
     });
 

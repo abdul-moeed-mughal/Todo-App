@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <h2> #<%= @task.id %></h2>
-  <div class="well">
     <% if @task.errors.any? %>
         <div class="alert alert-danger">
           <% @task.errors.full_messages.each do |message| %>
@@ -9,6 +8,7 @@
         </div>
     <% end %>
 
+  <div class="well">
     <%= form_for(@task, url:"/tasks/#{@task.id}", html: {method: :put},multipart: true) do |f| %>
         <%= render :partial =>'form',:locals => {:task => @task,:f => f} %>
 

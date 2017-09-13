@@ -1,5 +1,14 @@
-<div class="container-fluid well">
+<% if @status.errors.any? %>
+    <div class="alert alert-danger">
+      <% @status.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+      <% end %>
+    </div>
+<% end %>
+
+<div class="container-fluid ">
   <h2>Edit <%= @status.name.to_s.humanize %></h2>
+
   <% if @status.errors.any? %>
       <div class="alert alert-danger">
         <% @status.errors.full_messages.each do |message| %>
@@ -8,16 +17,27 @@
       </div>
   <% end %>
 
-  <%= form_for(@status, url: status_path(@status), html: { method: :put },multipart: true) do |f| %>
+  <div class="well">
+      <% if @status.present? %>
+          <%= form_for(@status, url: status_path(@status), html: { method: :put },multipart: true) do |f| %>
 
-      <%= render :partial =>'form',:locals => {:user => @status,:f => f} %>
+              <%= render :partial =>'form',:locals => {:user => @status,:f => f} %>
 
-      <div class="actions">
-        <%= f.submit "Update",class: 'btn btn-primary' %>
-      </div><br/>
-  <% end %>
+              <div class="actions">
+                <%= f.submit "Update",class: 'btn btn-primary' %>
+              </div><br/>
+          <% end %>
+      <% else %>
+          <div class="field">
+            <%= text_field_tag 'name'%>
+          </div><br>
 
-  <%= link_to 'Back', statuses_path %>
+          <div class="field">
+            <%= check_box_tag "is_closed"%>
+          </div>
+      <% end %>
+      <%= link_to 'Back', statuses_path %>
+  </div>
 </div>
 
 <script>

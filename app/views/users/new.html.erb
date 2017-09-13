@@ -1,5 +1,14 @@
+
 <div class="container-fluid ">
-    <h2>New User</h2>
+  <h2>New User</h2>
+
+  <% if @user.errors.any? %>
+      <div class="alert alert-danger">
+        <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </div>
+  <% end %>
   <div class="well">
       <%= form_for(@user, url: create_users_path, html: { method: :post },multipart: true) do |f| %>
           <%= render :partial =>'form',:locals => {:user => @user,:f => f} %>

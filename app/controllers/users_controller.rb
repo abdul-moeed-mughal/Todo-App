@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         format.html {redirect_to user_path(@user.id), notice: "User was successfully created."}
         format.json {render :show, status: :ok, location: @user}
       else
-        format.html{render :edit}
+        format.html{render :new}
         format.json{render json: @user.errors}
       end
     end

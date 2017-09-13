@@ -22,7 +22,7 @@ class StatusesController < ApplicationController
         format.html {redirect_to status_path(@status.id), notice: "Status was successfully created."}
         format.json {render :show, status: :ok, location: @status}
       else
-        format.html{render :edit}
+        format.html{render :new}
         format.json{render json: @status.errors}
       end
     end
